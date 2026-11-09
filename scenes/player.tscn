@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dkl6jnb043lqi"]
+
+[ext_resource type="Script" uid="uid://bme2oussdr8hg" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dgowrbxjykp65" path="res://art/cutevalley/Character/Players/Swordsman/swordsman_sprite_sheet.png" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(8, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtddq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1516983388]
+y_sort_enabled = true
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950231559]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=328553809]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_wtddq")
+offset = Vector2(4.65, -9.555)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2009197530]
+y_sort_enabled = true
+limit_enabled = false
+limit_left = 0
+limit_top = -13
+limit_right = 1280
+limit_bottom = 720
+position_smoothing_enabled = true

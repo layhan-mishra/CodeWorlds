@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot 3 specific ignores
+#.import/
+#export.cfg
+#export_presets.cfg
+
+# Imported-only assets (uncomment if using)
+#.import/
+
+# Mono-specific ignores
+.mono/
+obj/
+bin/
+data_*
