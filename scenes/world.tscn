@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d2288itg6as1r"]
+
+[ext_resource type="Script" uid="uid://d2iefdhotwlio" path="res://scripts/world.gd" id="1_world"]
+[ext_resource type="Script" uid="uid://c1a3ofbycfb2e" path="res://scripts/tall_grass.gd" id="2_grass"]
+[ext_resource type="PackedScene" uid="uid://dkl6jnb043lqi" path="res://scenes/player.tscn" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://bhoa2v0wtr7rm" path="res://scenes/level0.tscn" id="3_71j4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grass"]
+size = Vector2(82, 78)
+
+[node name="World" type="Node2D" unique_id=1342398344]
+y_sort_enabled = true
+script = ExtResource("1_world")
+
+[node name="Player" parent="." unique_id=1516983388 instance=ExtResource("2_k0juu")]
+position = Vector2(230, 157)
+
+[node name="level0" parent="." unique_id=1798973177 instance=ExtResource("3_71j4m")]
+position = Vector2(400, 229)
+
+[node name="Background" type="ColorRect" parent="." unique_id=860513148]
+y_sort_enabled = true
+offset_left = -199.0
+offset_top = 559.0
+offset_right = 1081.0
+offset_bottom = 1279.0
+color = Color(0.45, 0.75, 0.4, 1)
+
+[node name="TallGrass" type="Area2D" parent="." unique_id=88300308]
+y_sort_enabled = true
+position = Vector2(400, 300)
+script = ExtResource("2_grass")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TallGrass" unique_id=221532082]
+position = Vector2(-199, -207)
+shape = SubResource("RectangleShape2D_grass")
+
+[node name="ColorRect" type="ColorRect" parent="TallGrass" unique_id=115851613]
+offset_left = -242.0
+offset_top = -246.0
+offset_right = -158.0
+offset_bottom = -168.0
+color = Color(0.15, 0.5, 0.2, 1)

@@ -1,0 +1,147 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/startup_menu.gd" id="1_menu"]
+
+[node name="StartupMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.14, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CenterContainer/MainBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Code Worlds"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MainBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "An Educational Coding RPG"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/MainBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/MainBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/MainBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/MainBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/MainBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Quit"
+
+[node name="OptionsBox" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="OptionsTitle" type="Label" parent="CenterContainer/OptionsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+horizontal_alignment = 1
+
+[node name="AudioHeader" type="Label" parent="CenterContainer/OptionsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="CenterContainer/OptionsBox"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="VolumeLabel" type="Label" parent="CenterContainer/OptionsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_font_sizes/font_size = 13
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/OptionsBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/OptionsBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Back"
+
+[node name="CreditsBox" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CreditsTitle" type="Label" parent="CenterContainer/CreditsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="CreditsHeader" type="Label" parent="CenterContainer/CreditsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "CodeWorlds Development Team"
+horizontal_alignment = 1
+
+[node name="Roster" type="Label" parent="CenterContainer/CreditsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Layhan Mishra — Character & NPC Design
+Daniel Romanov — UI & Startup Menu
+Liam Sharkey — Environment & Quests
+Tanner Block — Codemal Battles
+Sanai Andrews — Minigames & Tutorial"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/CreditsBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/CreditsBox"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Back"
